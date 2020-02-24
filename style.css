@@ -17,6 +17,7 @@
 html,
 body {
     width: 100%;
+    max-width: 100vw;
     height: 100%;
     font-size: 16px;
     font-family: 'Roboto';
@@ -34,6 +35,26 @@ body {
         '. whatIKnow experiences profile .'
         '. whatIKnow experiences cta .';
     background-color: var(--darkGray);
+}
+
+@media screen and (max-width: 1440px) {
+    :root {
+        --baseSpacing: 4px;
+    }
+    html {
+        font-size: 13px;
+    }
+    body {
+        grid-template-columns: 40px 1fr 1fr fit-content(350px) 40px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            '. . . heartLogo .'
+            '. title title . .'
+            '. whoAmI experiences profile .'
+            '. whoAmI experiences profile .'
+            '. whatIKnow experiences profile .'
+            '. whatIKnow experiences cta .';
+    }
 }
 
 h1 {
@@ -120,8 +141,8 @@ p {
     justify-content: center;
     align-items: center;
     background-color: var(--darkPurple);
-	border-radius: 20px;
-	max-width: 200px;
+    border-radius: 20px;
+    max-width: 200px;
 }
 
 .chip--whatIKnow {
