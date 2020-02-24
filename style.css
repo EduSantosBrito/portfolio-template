@@ -117,6 +117,10 @@ p {
     flex-direction: column;
 }
 
+.whoAmI > p {
+    overflow-y: auto;
+}
+
 .whatIKnow {
     grid-area: whatIKnow;
     margin: calc(var(--baseSpacing) * 1);
@@ -134,6 +138,7 @@ p {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: calc(var(--baseSpacing) * 2);
     column-gap: calc(var(--baseSpacing) * 2);
+    overflow-y: auto;
 }
 
 .chip {
@@ -152,6 +157,7 @@ p {
 .experiences {
     grid-area: experiences;
     display: flex;
+    height: calc(100% - var(--baseSpacing) * 6);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -189,6 +195,7 @@ p {
 
 .experiences-skills {
     width: calc(100% - (var(--baseSpacing) * 6));
+    height: 30%;
     margin: 0px calc(var(--baseSpacing) * 3);
     display: flex;
     flex-direction: column;
@@ -207,6 +214,7 @@ p {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: calc(var(--baseSpacing) * 2);
     column-gap: calc(var(--baseSpacing) * 2);
+    overflow-y: auto;
 }
 
 .chip--skills {
@@ -216,6 +224,7 @@ p {
 
 .activityDescription {
     margin: calc(var(--baseSpacing) * 3);
+    height: 35%;
 }
 
 .activityDescription-title {
@@ -224,6 +233,8 @@ p {
 
 .activityDescription-paragraph {
     margin: calc(var(--baseSpacing) * 1) 0px;
+    height: 90%;
+    overflow-y: auto;
 }
 
 .profile {
