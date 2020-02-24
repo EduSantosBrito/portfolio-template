@@ -57,6 +57,26 @@ body {
     }
 }
 
+@media screen and (max-width: 1024px) {
+    :root {
+        --baseSpacing: 2px;
+    }
+    html {
+        font-size: 11px;
+    }
+    body {
+        grid-template-columns: 10px 1fr 1fr fit-content(250px) 10px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            '. . . heartLogo .'
+            '. title title . .'
+            '. whoAmI experiences profile .'
+            '. whoAmI experiences profile .'
+            '. whatIKnow experiences profile .'
+            '. whatIKnow experiences cta .';
+    }
+}
+
 h1 {
     font-weight: 900;
     color: var(--text);
@@ -148,9 +168,6 @@ p {
     background-color: var(--darkPurple);
     border-radius: 20px;
     max-width: 200px;
-}
-
-.chip--whatIKnow {
     padding: 10px 20px;
 }
 
@@ -219,7 +236,12 @@ p {
 
 .chip--skills {
     width: 100px;
-    padding: 10px 20px;
+}
+
+@media screen and (max-width: 1024px) {
+    .chip {
+        padding: 5px 15px;
+    }
 }
 
 .activityDescription {
@@ -266,6 +288,13 @@ p {
     padding: calc(var(--baseSpacing) * 2);
 }
 
+@media screen and (max-width: 1024px) {
+    .profile,
+    .cta {
+        width: calc(250px - var(--baseSpacing) * 1);
+    }
+}
+
 .cta-text {
     font-weight: 700;
     font-size: 1.3rem;
@@ -301,4 +330,24 @@ p {
     top: calc(100% - 300px);
     right: 0px;
     z-index: -1;
+}
+
+@media screen and (max-width: 1024px) {
+    .grayShape {
+        width: 150px;
+        height: 150px;
+        right: calc(50% - 75px);
+    }
+    .whiteShape {
+        width: 150px;
+        height: 200px;
+        top: calc(100% - 200px);
+    }
+
+    .purpleShape {
+        width: 150px;
+        height: 150px;
+        top: calc(100% - 150px);
+        right: 0px;
+    }
 }
