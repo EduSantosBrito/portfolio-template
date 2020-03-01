@@ -25,28 +25,25 @@ body {
 
 body {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr fit-content(350px) 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-        '. . . . heartLogo'
-        '. title title . .'
-        '. whoAmI experiences profile .'
-        '. whoAmI experiences profile .'
-        '. whatIKnow experiences profile .'
-        '. whatIKnow experiences cta .';
     background-color: var(--darkGray);
+    grid-template-columns: 40px 1fr 1fr 40px;
+    grid-template-rows: 100px 250px 1fr 1fr 1fr 3fr;
+    grid-template-areas:
+        '. heartLogo heartLogo .'
+        '. profile cta .'
+        '. title title .'
+        '. whoAmI whoAmI .'
+        '. whatIKnow whatIKnow .'
+        '. experiences experiences .';
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 1024px) {
     :root {
-        --baseSpacing: 4px;
-    }
-    html {
-        font-size: 13px;
+        --baseSpacing: 2px;
     }
     body {
-        grid-template-columns: 40px 1fr 1fr fit-content(350px) 40px;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 10px 1fr 1fr fit-content(250px) 10px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 100px;
         grid-template-areas:
             '. . . heartLogo .'
             '. title title . .'
@@ -57,18 +54,32 @@ body {
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1440px) {
     :root {
-        --baseSpacing: 2px;
-    }
-    html {
-        font-size: 11px;
+        --baseSpacing: 4px;
     }
     body {
-        grid-template-columns: 10px 1fr 1fr fit-content(250px) 10px;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 40px 1fr 1fr fit-content(350px) 40px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 100px;
         grid-template-areas:
             '. . . heartLogo .'
+            '. title title . .'
+            '. whoAmI experiences profile .'
+            '. whoAmI experiences profile .'
+            '. whatIKnow experiences profile .'
+            '. whatIKnow experiences cta .';
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    :root {
+        --baseSpacing: 8px;
+    }
+    body {
+        grid-template-columns: 1fr 2fr 2fr fit-content(350px) 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 100px;
+        grid-template-areas:
+            '. . . . heartLogo'
             '. title title . .'
             '. whoAmI experiences profile .'
             '. whoAmI experiences profile .'
@@ -168,7 +179,7 @@ p {
     background-color: var(--darkPurple);
     border-radius: 20px;
     max-width: 200px;
-    padding: 10px 20px;
+    padding: 5px 15px;
 }
 
 .experiences {
@@ -238,15 +249,21 @@ p {
     width: 100px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
     .chip {
-        padding: 5px 15px;
+        padding: 10px 20px;
     }
 }
 
 .activityDescription {
     margin: calc(var(--baseSpacing) * 3);
-    height: 35%;
+    height: 25%;
+}
+
+@media screen and (min-width: 2560px) {
+    .activityDescription {
+        height: 25%;
+    }
 }
 
 .activityDescription-title {
@@ -261,24 +278,36 @@ p {
 
 .profile {
     grid-area: profile;
-    width: 350px;
+    width: calc(250px - var(--baseSpacing) * 1);
     margin: calc(var(--baseSpacing) * 1);
-    border-radius: calc(var(--baseSpacing) / 4);
+    border-radius: 50%;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     background-image: url('assets/profile.jpg');
 }
 
+@media screen and (min-width: 1024px) {
+    .profile {
+        width: 350px;
+        margin: calc(var(--baseSpacing) * 1);
+        border-radius: calc(var(--baseSpacing) / 4);
+    }
+}
+
 .cta {
     grid-area: cta;
+    width: calc(250px - var(--baseSpacing) * 1);
     margin: calc(var(--baseSpacing) * 1);
     margin-bottom: calc(var(--baseSpacing) * 5);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .cta > button {
     width: 100%;
-    height: 100%;
+    height: 100px;
     background-color: var(--gray);
     border: none;
     outline: none;
@@ -288,10 +317,9 @@ p {
     padding: calc(var(--baseSpacing) * 2);
 }
 
-@media screen and (max-width: 1024px) {
-    .profile,
+@media screen and (min-width: 1024px) {
     .cta {
-        width: calc(250px - var(--baseSpacing) * 1);
+        width: 350px;
     }
 }
 
